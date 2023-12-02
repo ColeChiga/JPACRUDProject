@@ -3,13 +3,13 @@ package com.skilldistillery.music.entities;
 import java.util.Date;
 import java.util.Objects;
 
-import javax.annotation.processing.Generated;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+
+
 
 @Entity
 public class Song {
@@ -17,18 +17,17 @@ public class Song {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String title;
-	@Column(name="release_date")
+	@Column(name = "release_date")
 	private Date releaseDate;
 	private String artist;
-	@Column(name="album_art")
+	@Column(name = "album_art")
 	private String albumArt;
 	private Integer length;
 	private String genre;
 
 	public Song() {
-		
 	}
 
 	public int getId() {
@@ -71,11 +70,11 @@ public class Song {
 		this.albumArt = albumArt;
 	}
 
-	public int getLength() {
+	public Integer getLength() {
 		return length;
 	}
 
-	public void setLength(int length) {
+	public void setLength(Integer length) {
 		this.length = length;
 	}
 
@@ -109,6 +108,5 @@ public class Song {
 		return "Song [id=" + id + ", title=" + title + ", release_date=" + releaseDate + ", artist=" + artist
 				+ ", album_art=" + albumArt + ", length=" + length + ", genre=" + genre + "]";
 	}
-
 
 }

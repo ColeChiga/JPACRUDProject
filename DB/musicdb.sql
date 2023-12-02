@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS musicdb;
 
 USE musicdb;
 
-CREATE TABLE song (
+CREATE TABLE song(
 	id INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
 	title VARCHAR(40) NOT NULL,
 	release_date DATE,
@@ -26,31 +26,3 @@ INSERT INTO song (id, title, artist)
 INSERT INTO song (id, title, artist)
 		VALUES (3, 'Walk This Way', 'Aerosmith');
 
-
-
-
-
-
-
--- DROP DATABASE IF EXISTS musicdb;
--- CREATE DATABASE IF NOT EXISTS musicdb;
-
--- USE musicdb;
-
--- CREATE TABLE song (
---   id INTEGER PRIMARY KEY AUTO_INCREMENT,
---   name VARCHAR(50) NOT NULL,
---   description TEXT,
---   date_of_birth DATE,
---   weight_grams DOUBLE,
---   price DECIMAL(5,2),
---   image_url VARCHAR(2000)
--- );
-
--- DROP USER IF EXISTS frogdbuser@localhost;
--- CREATE USER IF NOT EXISTS frogdbuser@localhost identified by 'ribbet';
--- GRANT SELECT,INSERT,UPDATE,DELETE ON frogdb.* TO frogdbuser@localhost;
-
--- INSERT INTO FROG (id, name) VALUES (1, 'Kermit');
--- INSERT INTO FROG (id, name) VALUES (2, 'Hopkin Green Frog');
--- INSERT INTO FROG (id, name) VALUES (3, 'Michigan');
