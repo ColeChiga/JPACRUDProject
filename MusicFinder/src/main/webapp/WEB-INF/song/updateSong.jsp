@@ -15,7 +15,6 @@
 
 
 			<tr>
-				<th>ID</th>
 				<th>Title</th>
 				<th>Artist</th>
 				<th>Album</th>
@@ -27,7 +26,7 @@
 			<c:forEach items="${songList}" var="song">
 				<tr>
 					<form action="editSong.do" method="POST">
-					<th><input type="text" name="id" value="${song.id}"readonly="readonly"/></th>
+					<input type="text" name="id" value="${song.id}"readonly="readonly" hidden="hidden"/>
 					<th><input type="text" name="title" value="${song.title}"/></th>
 					<th><input type="text" name="artist" value="${song.artist}"/></th>
 					<th><input type="text" name="album" value="${song.album}"/></th>

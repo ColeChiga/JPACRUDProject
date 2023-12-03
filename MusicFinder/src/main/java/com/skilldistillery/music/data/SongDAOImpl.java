@@ -61,6 +61,41 @@ public class SongDAOImpl implements SongDao {
 		}else {
 			return false;			
 		}
+	}
+
+	@Override
+	public List<Song> findSongByColumn(String column, String query) {
+		
+//		query="'%"+query+"%'";
+		String jpql = "SELECT song FROM Song song WHERE song."+column+" LIKE '%"+query+"%'";
+		System.out.println(jpql);
+		List<Song> results = em.createQuery(jpql, (Song.class)).getResultList();
+		System.out.println(results);
+		return results;		
+	}
+
+	@Override
+	public List<Song> findSongByTitle() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Song> findSongByAlbum() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Song> findSongByGenre() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Song> findSongByArtist() {
+		// TODO Auto-generated method stub
+		return null;
 	} 
 	
 

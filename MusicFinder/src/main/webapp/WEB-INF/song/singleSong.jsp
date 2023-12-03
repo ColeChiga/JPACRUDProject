@@ -9,6 +9,9 @@
 <body>
 	<h1>${song.title}</h1>
 	<h2>${song.artist}</h2>
+	<h3>${song.album}</h3>
+	
+	
 	
 </body>
 </html>

@@ -88,6 +88,12 @@ public class SongController {
 		return "song/deleteSong";
 	}
 	
+	@RequestMapping(path = "songList.do" )
+	public String songList(@RequestParam("column") String column, @RequestParam("query") String query , Model model) {
+		model.addAttribute("songList", songDao.findSongByColumn(column, query));
+		return "song/songList";
+	}
+	
 	private LocalDate convertDate (String string) {
 		LocalDate date = null;
 		date= LocalDate.parse(string);

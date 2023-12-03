@@ -27,7 +27,18 @@
 				Song ID: <input type="number" name="songId" /> <input type="submit"
 					value="Show song" />
 			</form>
-
+			<br>
+			<form action="songList.do" method="GET">
+				Select: <Select name="column">
+					<option value="title">Title</option>
+					<option value="artist">Artist</option>
+					<option value="album">Album</option>
+					<option value="genre">Genre</option>
+				</Select> 
+				Search: <input type="text" name="query" /> <input type="submit"
+					value="Show song" />
+			</form>
+			<br>
 			<table border="1">
 
 
