@@ -19,43 +19,48 @@ public class SongDAOImpl implements SongDao {
 
 	@Override
 	public Song findByID(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(Song.class, id);
 	}
 
 	@Override
 	public List<Song> findAll() {
-		System.out.println ("Find all 1*************************");
-		
 		String jpql = "SELECT song FROM Song song";
-		System.out.println(jpql);
-		
 		List<Song> results = em.createQuery(jpql, (Song.class)).getResultList();
-		System.out.println(results.size() + "*************************");
 		return results;
-		
-		
-//		String input = "SELECT s FROM Song s";
-//		
-//		return em.createQuery(input, Song.class).getResultList();
-	}
+			}
 
 	@Override
 	public Song create(Song song) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		 em.persist(song);
+		 em.flush();
+		 
+		return song;
 	}
 
 	@Override
 	public Song update(int songId, Song song) {
-		// TODO Auto-generated method stub
+		
+		Song editSong = em.find(Song.class, songId);
+		editSong.setTitle(song.getTitle());
+		editSong.setReleaseDate(song.getReleaseDate());
+		editSong.setArtist(song.getArtist());
+		editSong.setAlbum(song.getAlbum());
+		editSong.setLength(song.getLength());
+		editSong.setGenre(song.getGenre());
+		
 		return null;
 	}
 
 	@Override
 	public boolean delete(int songId) {
-		// TODO Auto-generated method stub
-		return false;
+		Song removeSong = em.find(Song.class, songId);
+		if (removeSong.getTitle()!=null) {
+			em.remove(removeSong);
+			return true;
+		}else {
+			return false;			
+		}
 	} 
 	
 

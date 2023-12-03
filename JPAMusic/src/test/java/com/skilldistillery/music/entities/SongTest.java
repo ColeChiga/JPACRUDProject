@@ -41,4 +41,14 @@ class SongTest {
 		assertNotNull(song);
 		assertEquals("American Pie", song.getTitle());
 	}
+	@Test
+	void test_song_data_types() {
+		assertNotNull(song);
+		assertEquals("American Pie", song.getTitle());
+		assertEquals("Don McLean", song.getArtist());
+		assertEquals("American Pie", song.getAlbum());
+		assertEquals("1971-10-01", song.getReleaseDate().toString());
+		assertEquals("08:42", song.getLength());
+		assertEquals("Folk Rock", song.getGenre());
+	}
 }

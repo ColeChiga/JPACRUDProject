@@ -1,5 +1,6 @@
 package com.skilldistillery.music.entities;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
@@ -20,16 +21,37 @@ public class Song {
 
 	private String title;
 	@Column(name = "release_date")
-	private Date releaseDate;
+	private LocalDate releaseDate;
 	private String artist;
-	@Column(name = "album_art")
-	private String albumArt;
-	private Integer length;
+	private String album;
+	private String length;
 	private String genre;
 
+//constructors	
 	public Song() {
 	}
+	
+	public Song( String title, LocalDate releaseDate, String artist, String album, String length, String genre) {
+		this.title = title;
+		this.releaseDate = releaseDate;
+		this.artist = artist;
+		this.album = album;
+		this.length = length;
+		this.genre = genre;
+	}
 
+private int convertLength(String length) {
+		String temp[]=length.split(":"); 
+		int minutes=Integer.parseInt(temp[0]);
+		int seconds=Integer.parseInt(temp[1]);
+	
+		seconds=seconds+(minutes*60);
+		
+		
+		return seconds;
+	}
+
+//get/set
 	public int getId() {
 		return id;
 	}
@@ -46,11 +68,12 @@ public class Song {
 		this.title = title;
 	}
 
-	public Date getReleaseDate() {
+	public LocalDate getReleaseDate() {
+		
 		return releaseDate;
 	}
 
-	public void setReleaseDate(Date releaseDate) {
+	public void setReleaseDate(LocalDate releaseDate) {
 		this.releaseDate = releaseDate;
 	}
 
@@ -62,19 +85,20 @@ public class Song {
 		this.artist = artist;
 	}
 
-	public String getAlbumArt() {
-		return albumArt;
+	public String getAlbum() {
+		return album;
 	}
 
-	public void setAlbumArt(String albumArt) {
-		this.albumArt = albumArt;
+	public void setAlbum(String album) {
+		this.album = album;
 	}
 
-	public Integer getLength() {
+	public String getLength() {
+		
 		return length;
 	}
 
-	public void setLength(Integer length) {
+	public void setLength(String length) {
 		this.length = length;
 	}
 
@@ -85,7 +109,8 @@ public class Song {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-
+	
+//hash and equals
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -102,11 +127,12 @@ public class Song {
 		Song other = (Song) obj;
 		return id == other.id;
 	}
-
+	
+//to string
 	@Override
 	public String toString() {
 		return "Song [id=" + id + ", title=" + title + ", release_date=" + releaseDate + ", artist=" + artist
-				+ ", album_art=" + albumArt + ", length=" + length + ", genre=" + genre + "]";
+				+ ", album=" + album + ", length=" + length + ", genre=" + genre + "]";
 	}
 
 }
