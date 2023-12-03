@@ -8,7 +8,7 @@ CREATE TABLE song(
 	title VARCHAR(40) NOT NULL,
 	release_date DATE,
 	artist VARCHAR(40) NOT NULL,
-	album_art VARCHAR(2000),
+	album VARCHAR(100),
 	length INT(4),
 	genre VARCHAR(10)
 );
