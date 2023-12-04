@@ -26,19 +26,53 @@ public class Song {
 	private String album;
 	private String length;
 	private String genre;
+	private String video;
+	@Column(name = "album_art")
+	private String albumArt;
 
 //constructors	
 	public Song() {
 	}
 	
-	public Song( String title, LocalDate releaseDate, String artist, String album, String length, String genre) {
-		this.title = title;
-		this.releaseDate = releaseDate;
-		this.artist = artist;
-		this.album = album;
-		this.length = length;
-		this.genre = genre;
+
+public Song( String title, LocalDate releaseDate, String artist, String album, String length, String genre,
+		String video, String albumArt) {
+	
+	this.title = title;
+	this.releaseDate = releaseDate;
+	this.artist = artist;
+	this.album = album;
+	this.length = length;
+	this.genre = genre;
+	this.video = video;
+	this.albumArt = albumArt;
+}
+
+
+
+public String getVideo() {
+		return video;
 	}
+
+
+
+	public void setVideo(String video) {
+		this.video = video;
+	}
+
+
+
+	public String getAlbumArt() {
+		return albumArt;
+	}
+
+
+
+	public void setAlbumArt(String albumArt) {
+		this.albumArt = albumArt;
+	}
+
+
 
 private int convertLength(String length) {
 		String temp[]=length.split(":"); 

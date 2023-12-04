@@ -48,8 +48,10 @@ public class SongDAOImpl implements SongDao {
 		editSong.setAlbum(song.getAlbum());
 		editSong.setLength(song.getLength());
 		editSong.setGenre(song.getGenre());
+		editSong.setVideo(song.getVideo());
+		editSong.setAlbumArt(song.getAlbumArt());
 		
-		return null;
+		return editSong;
 	}
 
 	@Override
