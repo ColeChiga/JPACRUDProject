@@ -5,7 +5,7 @@ The JPACRUDProject is a project designed to test someones ability to create and 
 
 When accessing the JPA project, the user is shown a table with A list of songs in the database. The user can then click on the title of a song to view information about that song. They can also access the navigation bar at the top of the page. 
 
-### navigation bar
+### Navigation bar
 On the navigation bar, the user is given the option to add, edit, or remove a song, search for a song by a category (title, artist, album, or genre), or search for a song by its ID. 
 
 ### Create
